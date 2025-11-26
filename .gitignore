@@ -179,3 +179,15 @@ cython_debug/
 #  refer to https://docs.cursor.com/context/ignore-files
 .cursorignore
 .cursorindexingignore
+
+# Project specific ignores
+.idea/
+.vscode/
+.streamlit/
+
+data/
+*.csv
+
+.DS_Store
+Thumbs.db
+desktop.ini
