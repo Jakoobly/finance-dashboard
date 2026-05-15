@@ -4,11 +4,11 @@ import pandas as pd
 
 
 def load_category_rules(path="category_rules.json"):
-    path_obj = pathlib.Path(path)
+    path_obj = pathlib.Path(__file__).parent / path
     if not path_obj.exists():
-        raise FileNotFoundError("Category rules file not found at: ", str(path_obj))
+        raise FileNotFoundError(f"Category rules file not found at: {str(path_obj)}")
 
-    with open(path_obj, "r", encoding = "utf-8") as f:
+    with open(path_obj, "r", encoding="utf-8") as f:
         rules = json.load(f) #Rules is a dictionary with the categories and keywords in it
 
 
@@ -43,7 +43,7 @@ def apply_auto_categorization(df, rules,
                               overwrite_existing=False):
 
     if source_column not in df.columns:
-        raise KeyError("Source_column: " + source_column + "not found in dataframe")
+        raise KeyError(f"Source_column: {source_column} not found in dataframe")
 
     if target_column not in df.columns:
         df[target_column] = None

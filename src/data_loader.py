@@ -3,9 +3,7 @@ import pandas as pd
 
 
 def load_data():
-    data_path = Path(
-        r"C:\Users\Zippe\Documents\Projekt Atlas\FinanceProject1\data\bankstatements.csv"
-    )
+    data_path = Path(__file__).parent.parent / "data" / "bankstatements.csv"
 
     print("Nutze Pfad:", data_path)
 
